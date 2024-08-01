@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mega Tic Tac Toe Game</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Mega Tic Tac Toe Game">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Emma Ruckle">
+        <link rel="stylesheet" href="styles.css">
+        <script type = "text/javascript" src="ticTacToe.js"></script>
+    </head>
+    <body>
+        <div id="top-container">
+            <h1 id="title">Mega Tic Tac Toe</h1>
+        <ul>
+            <li><a href="index.html">Game</a></li>
+            <li><a href="instructions.html">Instructions</a></li>
+        </ul>
+        </div>
+        <div id="which-player">
+            <h2 id="player">Player 1 Start</h2>
+        </div>
+            <div class="popup-box" id="winner-popup-box">
+                <h1 id="winner-popup-title"></h1>
+                <p id="winner-popup-text"></p>
+                <button class="close-button" id="popup-close" onclick="closePopup('winner-popup-box')">&times;</button>
+            </div>
+            <div class="popup-box" id="reset-popup-box">
+                <h1 id="reset-popup-title">Are you sure you want to reset the board?</h1>
+                <p id="reset-popup-text">All game content will be lost.</p>
+                <div class="button-container">
+                    <button class="button" id="yes-button" onclick="reset()">Yes</button>
+                    <div class="divider"></div>
+                    <button class="button" id="no-button" onclick="closePopup('reset-popup-box')">No</button>
+                </div>
+                <p></p>
+            </div>
+        <div class="flex-container" id="flex-board">
+            <div class="flex-row" id="flex-row0">
+                <div class="flex-cell-UL" id="flex-cell0">
+                    <div class="flex-container-mini" id="mini-flex-board0">
+                        <div class="flex-row" id="mini-flex-row00">
+                            <div class="flex-cell-UL" id="mini-flex-cell00" onclick="turn(0,0,0,id,0)"></div>
+                            <div class="flex-cell-UM" id="mini-flex-cell01" onclick="turn(0,0,1,id,1)"></div>
+                            <div class="flex-cell-UR" id="mini-flex-cell02" onclick="turn(0,0,2,id,2)"></div>
+                        </div>
+                        <div class="flex-row" id="mini-flex-row01">
+                            <div class="flex-cell-ML" id="mini-flex-cell03" onclick="turn(0,1,0,id,3)"></div>
+                            <div class="flex-cell-MM" id="mini-flex-cell04" onclick="turn(0,1,1,id,4)"></div>
+                            <div class="flex-cell-MR" id="mini-flex-cell05" onclick="turn(0,1,2,id,5)"></div>
+                        </div>
+                        <div class="flex-row" id="mini-flex-row02">
+                            <div class="flex-cell-LL" id="mini-flex-cell06" onclick="turn(0,2,0,id,6)"></div>
+                            <div class="flex-cell-LM" id="mini-flex-cell07" onclick="turn(0,2,1,id,7)"></div>
+                            <div class="flex-cell-LR" id="mini-flex-cell08" onclick="turn(0,2,2,id,8)"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-cell-UM" id="flex-cell1">
+                    <div class="flex-container-mini" id="mini-flex-board1">
+                        <div class="flex-row" id="mini-flex-row10">
+                            <div class="flex-cell-UL" id="mini-flex-cell10" onclick="turn(1,0,0,id,0)"></div>
+                            <div class="flex-cell-UM" id="mini-flex-cell11" onclick="turn(1,0,1,id,1)"></div>
+                            <div class="flex-cell-UR" id="mini-flex-cell12" onclick="turn(1,0,2,id,2)"></div>
+                        </div>
+                        <div class="flex-row" id="mini-flex-row11">
+                            <div class="flex-cell-ML" id="mini-flex-cell13" onclick="turn(1,1,0,id,3)"></div>
+                            <div class="flex-cell-MM" id="mini-flex-cell14" onclick="turn(1,1,1,id,4)"></div>
+                            <div class="flex-cell-MR" id="mini-flex-cell15" onclick="turn(1,1,2,id,5)"></div>
+                        </div>
+                        <div class="flex-row" id="mini-flex-row12">
+                            <div class="flex-cell-LL" id="mini-flex-cell16" onclick="turn(1,2,0,id,6)"></div>
+                            <div class="flex-cell-LM" id="mini-flex-cell17" onclick="turn(1,2,1,id,7)"></div>
+                            <div class="flex-cell-LR" id="mini-flex-cell18" onclick="turn(1,2,2,id,8)"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-cell-UR" id="flex-cell2">
+                    <div class="flex-container-mini" id="mini-flex-board2">
+                        <div class="flex-row" id="mini-flex-row20">
+                            <div class="flex-cell-UL" id="mini-flex-cell20" onclick="turn(2,0,0,id,0)"></div>
+                            <div class="flex-cell-UM" id="mini-flex-cell21" onclick="turn(2,0,1,id,1)"></div>
+                            <div class="flex-cell-UR" id="mini-flex-cell22" onclick="turn(2,0,2,id,2)"></div>
+                        </div>
+                        <div class="flex-row" id="mini-flex-row21">
+                            <div class="flex-cell-ML" id="mini-flex-cell23" onclick="turn(2,1,0,id,3)"></div>
+                            <div class="flex-cell-MM" id="mini-flex-cell24" onclick="turn(2,1,1,id,4)"></div>
+                            <div class="flex-cell-MR" id="mini-flex-cell25" onclick="turn(2,1,2,id,5)"></div>
+                        </div>
+                        <div class="flex-row" id="mini-flex-row22">
+                            <div class="flex-cell-LL" id="mini-flex-cell26" onclick="turn(2,2,0,id,6)"></div>
+                            <div class="flex-cell-LM" id="mini-flex-cell27" onclick="turn(2,2,1,id,7)"></div>
+                            <div class="flex-cell-LR" id="mini-flex-cell28" onclick="turn(2,2,2,id,8)"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-row" id="flex-row1">
+                <div class="flex-cell-ML" id="flex-cell3">
+                    <div class="flex-container-mini" id="mini-flex-board3">
+                        <div class="flex-row" id="mini-flex-row30">
+                            <div class="flex-cell-UL" id="mini-flex-cell30" onclick="turn(3,0,0,id,0)"></div>
+                            <div class="flex-cell-UM" id="mini-flex-cell31" onclick="turn(3,0,1,id,1)"></div>
+                            <div class="flex-cell-UR" id="mini-flex-cell32" onclick="turn(3,0,2,id,2)"></div>
+                        </div>
+                        <div class="flex-row" id="mini-flex-row31">
+                            <div class="flex-cell-ML" id="mini-flex-cell33" onclick="turn(3,1,0,id,3)"></div>
+                            <div class="flex-cell-MM" id="mini-flex-cell34" onclick="turn(3,1,1,id,4)"></div>
+                            <div class="flex-cell-MR" id="mini-flex-cell35" onclick="turn(3,1,2,id,5)"></div>
+                        </div>
+                        <div class="flex-row" id="mini-flex-row32">
+                            <div class="flex-cell-LL" id="mini-flex-cell36" onclick="turn(3,2,0,id,6)"></div>
+                            <div class="flex-cell-LM" id="mini-flex-cell37" onclick="turn(3,2,1,id,7)"></div>
+                            <div class="flex-cell-LR" id="mini-flex-cell38" onclick="turn(3,2,2,id,8)"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-cell-MM" id="flex-cell4">
+                    <div class="flex-container-mini" id="mini-flex-board4">
+                        <div class="flex-row" id="mini-flex-row40">
+                            <div class="flex-cell-UL" id="mini-flex-cell40" onclick="turn(4,0,0,id,0)"></div>
+                            <div class="flex-cell-UM" id="mini-flex-cell41" onclick="turn(4,0,1,id,1)"></div>
+                            <div class="flex-cell-UR" id="mini-flex-cell42" onclick="turn(4,0,2,id,2)"></div>
+                        </div>
+                        <div class="flex-row" id="mini-flex-row31">
+                            <div class="flex-cell-ML" id="mini-flex-cell43" onclick="turn(4,1,0,id,3)"></div>
+                            <div class="flex-cell-MM" id="mini-flex-cell44" onclick="turn(4,1,1,id,4)"></div>
+                            <div class="flex-cell-MR" id="mini-flex-cell45" onclick="turn(4,1,2,id,5)"></div>
+                        </div>
+                        <div class="flex-row" id="mini-flex-row32">
+                            <div class="flex-cell-LL" id="mini-flex-cell46" onclick="turn(4,2,0,id,6)"></div>
+                            <div class="flex-cell-LM" id="mini-flex-cell47" onclick="turn(4,2,1,id,7)"></div>
+                            <div class="flex-cell-LR" id="mini-flex-cell48" onclick="turn(4,2,2,id,8)"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-cell-MR" id="flex-cell5">
+                    <div class="flex-container-mini" id="mini-flex-board5">
+                        <div class="flex-row" id="mini-flex-row50">
+                            <div class="flex-cell-UL" id="mini-flex-cell50" onclick="turn(5,0,0,id,0)"></div>
+                            <div class="flex-cell-UM" id="mini-flex-cell51" onclick="turn(5,0,1,id,1)"></div>
+                            <div class="flex-cell-UR" id="mini-flex-cell52" onclick="turn(5,0,2,id,2)"></div>
+                        </div>
+                        <div class="flex-row" id="mini-flex-row51">
+                            <div class="flex-cell-ML" id="mini-flex-cell53" onclick="turn(5,1,0,id,3)"></div>
+                            <div class="flex-cell-MM" id="mini-flex-cell54" onclick="turn(5,1,1,id,4)"></div>
+                            <div class="flex-cell-MR" id="mini-flex-cell55" onclick="turn(5,1,2,id,5)"></div>
+                        </div>
+                        <div class="flex-row" id="mini-flex-row52">
+                            <div class="flex-cell-LL" id="mini-flex-cell56" onclick="turn(5,2,0,id,6)"></div>
+                            <div class="flex-cell-LM" id="mini-flex-cell57" onclick="turn(5,2,1,id,7)"></div>
+                            <div class="flex-cell-LR" id="mini-flex-cell58" onclick="turn(5,2,2,id,8)"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-row" id="flex-row2">
+                <div class="flex-cell-LL" id="flex-cell6">
+                    <div class="flex-container-mini" id="mini-flex-board6">
+                        <div class="flex-row" id="mini-flex-row60">
+                            <div class="flex-cell-UL" id="mini-flex-cell60" onclick="turn(6,0,0,id,0)"></div>
+                            <div class="flex-cell-UM" id="mini-flex-cell61" onclick="turn(6,0,1,id,1)"></div>
+                            <div class="flex-cell-UR" id="mini-flex-cell62" onclick="turn(6,0,2,id,2)"></div>
+                        </div>
+                        <div class="flex-row" id="mini-flex-row61">
+                            <div class="flex-cell-ML" id="mini-flex-cell63" onclick="turn(6,1,0,id,3)"></div>
+                            <div class="flex-cell-MM" id="mini-flex-cell64" onclick="turn(6,1,1,id,4)"></div>
+                            <div class="flex-cell-MR" id="mini-flex-cell65" onclick="turn(6,1,2,id,5)"></div>
+                        </div>
+                        <div class="flex-row" id="mini-flex-row62">
+                            <div class="flex-cell-LL" id="mini-flex-cell66" onclick="turn(6,2,0,id,6)"></div>
+                            <div class="flex-cell-LM" id="mini-flex-cell67" onclick="turn(6,2,1,id,7)"></div>
+                            <div class="flex-cell-LR" id="mini-flex-cell68" onclick="turn(6,2,2,id,8)"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-cell-LM" id="flex-cell7">
+                    <div class="flex-container-mini" id="mini-flex-board7">
+                        <div class="flex-row" id="mini-flex-row70">
+                            <div class="flex-cell-UL" id="mini-flex-cell70" onclick="turn(7,0,0,id,0)"></div>
+                            <div class="flex-cell-UM" id="mini-flex-cell71" onclick="turn(7,0,1,id,1)"></div>
+                            <div class="flex-cell-UR" id="mini-flex-cell72" onclick="turn(7,0,2,id,2)"></div>
+                        </div>
+                        <div class="flex-row" id="mini-flex-row71">
+                            <div class="flex-cell-ML" id="mini-flex-cell73" onclick="turn(7,1,0,id,3)"></div>
+                            <div class="flex-cell-MM" id="mini-flex-cell74" onclick="turn(7,1,1,id,4)"></div>
+                            <div class="flex-cell-MR" id="mini-flex-cell75" onclick="turn(7,1,2,id,5)"></div>
+                        </div>
+                        <div class="flex-row" id="mini-flex-row72">
+                            <div class="flex-cell-LL" id="mini-flex-cell76" onclick="turn(7,2,0,id,6)"></div>
+                            <div class="flex-cell-LM" id="mini-flex-cell77" onclick="turn(7,2,1,id,7)"></div>
+                            <div class="flex-cell-LR" id="mini-flex-cell78" onclick="turn(7,2,2,id,8)"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-cell-LR" id="flex-cell8">
+                    <div class="flex-container-mini" id="mini-flex-board8">
+                        <div class="flex-row" id="mini-flex-row80">
+                            <div class="flex-cell-UL" id="mini-flex-cell80" onclick="turn(8,0,0,id,0)"></div>
+                            <div class="flex-cell-UM" id="mini-flex-cell81" onclick="turn(8,0,1,id,1)"></div>
+                            <div class="flex-cell-UR" id="mini-flex-cell82" onclick="turn(8,0,2,id,2)"></div>
+                        </div>
+                        <div class="flex-row" id="mini-flex-row51">
+                            <div class="flex-cell-ML" id="mini-flex-cell83" onclick="turn(8,1,0,id,3)"></div>
+                            <div class="flex-cell-MM" id="mini-flex-cell84" onclick="turn(8,1,1,id,4)"></div>
+                            <div class="flex-cell-MR" id="mini-flex-cell85" onclick="turn(8,1,2,id,5)"></div>
+                        </div>
+                        <div class="flex-row" id="mini-flex-row52">
+                            <div class="flex-cell-LL" id="mini-flex-cell86" onclick="turn(8,2,0,id,6)"></div>
+                            <div class="flex-cell-LM" id="mini-flex-cell87" onclick="turn(8,2,1,id,7)"></div>
+                            <div class="flex-cell-LR" id="mini-flex-cell88" onclick="turn(8,2,2,id,8)"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="button-container" id="bottom-button-container">
+            <button class="button" id="undo-button" onclick="undo()">Undo</button>
+            <div class="divider"></div>
+            <button class="button" id="reset-button" onclick="resetHelper()">Reset</button>
+        </div>
+    </body>
+</html>
