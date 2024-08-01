@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------------------------------------------------
 // N64 Include by Emma Ruckle
 // Macros to set up the title screen
-// PrintString is by Peter Lemon, slightly modified
+// PrintString is by PeterLemon, slightly modified
 // ----------------------------------------------------------------------------------------------------------
 
 macro PrintString(rows, cols, fontfile, string, length) { // passes arugments to printString asm code, and calls printString asm
