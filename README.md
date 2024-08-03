@@ -11,7 +11,7 @@ A collection of course and personal projects showcasing my skills and experience
 
 ## MIPS Paint (Summer '24)
 - Technologies Used: MIPS Assembly
-Description: Created an MS Paint-inspired drawing application for the Nintendo 64. This project highlights my skills in MIPS Assembly Language, graphics programming, and understanding of the N64 architecture.
+- Description: Created an MS Paint-inspired drawing application for the Nintendo 64. This project highlights my skills in MIPS Assembly Language, graphics programming, and understanding of the N64 architecture.
 
 ## Reverse Wordle (Fall '23)
 - Technologies Used: Java
