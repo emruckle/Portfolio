@@ -1,5 +1,5 @@
 # Portfolio
-A collection of course and personal projects showcasing my skills and experience in various programming languages and technologies.
+A collection of course and personal projects showcasing my skills and experience in various programming languages and technologies. See each individual project folder for more in depth information.
 
 ## Hamster Alert (Spring '24)
 - Technologies Used: Embedded Systems, Raspberry Pi, Python
