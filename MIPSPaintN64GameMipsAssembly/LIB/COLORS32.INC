@@ -1,6 +1,6 @@
 // COLOR names used from
 // http://etetoolkit.org/docs/2.3/reference/reference_treeview.html#color-names
-// By Peter Lemon
+// By fraser125
 // Red Colors
 constant INDIAN_RED32 = $CD5C5C00 
 constant LIGHT_CORAL32 = $F0808000
