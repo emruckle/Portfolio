@@ -8,5 +8,5 @@ Description:
 - Dictionary based compression
 - File handling
 - Efficient memory management
-- 
+  
 Skills Demonstrated: Backend development, C programming, algorithm implementation, file I/O, dynamic memory management
