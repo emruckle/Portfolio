@@ -7,7 +7,7 @@ This program implements a Reverse Wordle game, where the user selects a five-let
 - Skills Demonstrated: Java Programming, algorithm development, data structures, user interaction, debugging and testing.
 
 ## Detailed Program Information and Example Ouput
-The program is centered around the Guava MutableGraph data structure. We used this data structure so that we could efficiently hold information about the relationships among many pieces of data.This project filters through the list of all five-letter 
+The program is centered around the Guava MutableGraph data structure. We used this data structure so that we could efficiently hold information about the relationships among many pieces of data. This project filters through the list of all five-letter 
 words in the English language in order to find a 
 combination of five five-letter words which between them
 contain 25 of the 26 letters in the English alphabet. 
