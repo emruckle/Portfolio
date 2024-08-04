@@ -4,7 +4,7 @@ This program implements a Reverse Wordle game, where the user selects a five-let
 
 - Technologies Used: Java, Guava Library.
 - Description: For more specific information about the components of the program and an example of its output, see below.
-- Skills Demonstrated: Java Programming, algorithm development, data structures, user interaction, debugging and testing.
+- Skills Demonstrated: Backend development, Java programming, algorithm development, data structures, user interaction, debugging and testing.
 
 ## Detailed Program Information and Example Ouput
 The program is centered around the Guava MutableGraph data structure. We used this data structure so that we could efficiently hold information about the relationships among many pieces of data. This project filters through the list of all five-letter 
