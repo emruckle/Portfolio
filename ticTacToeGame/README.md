@@ -8,3 +8,7 @@ Description:
 - User-Friendly Interface: Includes interactive popups, an undo button, a reset button and alerts.
 - Comprehensive Pages: Contains a game page and an instruction page for easy navigation.
 Skills Demonstrated: Web development, frontend development, game design, user experience.
+
+Play the game [here](https://emruckle.github.io/ticTacToeGame/index.html).
+
+## Example Gameplay
