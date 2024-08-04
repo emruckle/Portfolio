@@ -14,4 +14,11 @@ Description:
 Skills Demonstrated: MIPS Assembly programming, game development for Nintendo 64, integration of external sources and libraries, implementation of interactive features and user interface elements
 
 ## Example Gameplay
+![](titleScreen.png)
+
+Title Screen
+
+![](gameplay.png)
+
+Gameplay
 
