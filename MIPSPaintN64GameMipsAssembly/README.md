@@ -1,11 +1,16 @@
 # MIPS Paint
 
-This project is an MS Paint-inspired drawing application developed for the Nintendo 64 gaming console. It includes multiple gameplay modes (draw, erase, move), as well as a color selection feature. It can be played on the Nintendo 64 console using a programmable cartidge, or on a video game emulator such as Ares. This project is written in MIPS Assembly, and PeterLemon's N64 Github repository was an inavluable resource. Most of the files in the LIB folder are .INC files written by PeterLemon. Some of his macros are used throughout my project, with credit given to him both here, and in inline comments. COLORS16.INC and COLORS32.INC were written by fraser125 on Github. 
+This project is an MS Paint-inspired drawing application designed for the Nintendo 64 gaming console. It features multiple gameplay modes, including drawing, erasing, and moving, along with a color selection tool. The application can be played on a Nintendo 64 console using a programmable cartridge or on retro game emulators like Ares.
 
-Technologies Used: MIPS Assembly
+The project is implemented in MIPS Assembly, with contributions from PeterLemon's N64 GitHub repository, which provided essential resources and macros used throughout the project. The files in the LIB folder include .INC files written by PeterLemon, and some of his macros are incorporated with appropriate credit both in this documentation and in inline comments. Additionally, the COLORS16.INC and COLORS32.INC files were provided by fraser125 on GitHub.
+
+Technologies Used: MIPS Assembly, EverDrive-64 X7 programmable cartidge.
 Description:
-- Multiple gameplay modes
-  - Draw, move, and erase.
-  - 
-- Color selection feature
-Skills Demonstrated:
+  - Complex assembly program composed of a main file (MIPSPaintEmulator.asm), functions and multiple .INC files with macros.
+  - Multiple gameplay modes: draw, move, and erase.
+  - Color selection feature.
+  
+Skills Demonstrated: MIPS Assembly programming, game development for Nintendo 64, integration of external sources and libraries, implementation of interactive features and user interface elements
+
+## Example Gameplay
+
