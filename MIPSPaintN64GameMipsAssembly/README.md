@@ -5,6 +5,7 @@ This project is an MS Paint-inspired drawing application designed for the Ninten
 The project is implemented in MIPS Assembly, with contributions from PeterLemon's N64 GitHub repository, which provided essential resources and macros used throughout the project. The files in the LIB folder include .INC files written by PeterLemon, and some of his macros are incorporated with appropriate credit both in this documentation and in inline comments. Additionally, the COLORS16.INC and COLORS32.INC files were provided by fraser125 on GitHub.
 
 Technologies Used: MIPS Assembly, EverDrive-64 X7 programmable cartidge.
+
 Description:
   - Complex assembly program composed of a main file (MIPSPaintEmulator.asm), functions and multiple .INC files with macros.
   - Multiple gameplay modes: draw, move, and erase.
