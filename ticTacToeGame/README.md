@@ -12,3 +12,5 @@ Skills Demonstrated: Web development, frontend development, game design, user ex
 Play the game [here](https://emruckle.github.io/ticTacToeGame/index.html).
 
 ## Example Gameplay
+
+![](megaTicTacToeGameplay.png)
