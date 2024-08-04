@@ -68,7 +68,7 @@ program's guess was "bolds", the user would respond
 "NPYNN"
 
 The program will contain a built-in process to handle 
-misformatted user input. Stupid users. 
+misformatted user input. 
 
 The program will make five guesses using the 
 predetermined guess words. If the user responds with 
