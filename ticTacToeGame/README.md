@@ -14,3 +14,4 @@ Play the game [here](https://emruckle.github.io/ticTacToeGame/index.html).
 ## Example Gameplay
 
 ![](megaTicTacToeGameplay.png)
+![](megaTicTacToeWinnerPopup.png)
