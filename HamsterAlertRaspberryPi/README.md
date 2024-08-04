@@ -8,10 +8,10 @@ This project leverages a Raspberry Pi and a passive infrared (PIR) sensor to det
     - Notification System: Implemented a Python script to send text alerts via email-to-SMS when movement is detected.
 - Skills Demonstrated: Embedded systems, sensor integration, Python programming, real-time notifications.
 
-![](exampleOutput.jpeg)
+![](exampleOutput.png)
 Example of the text received when our test subject, Duck, is awake.
 
-![](assembledHardware.jpeg)
+![](assembledHardware.png)
 Setup of the Raspberry Pi and PIR sensor.
 
 This project showcases my ability to integrate hardware and software to create functional and practical solutions.
