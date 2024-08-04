@@ -1,4 +1,4 @@
-# Wordle Solver final project
+# Reverse Wordle (Wordle Solver)
 
 This program implements a Reverse Wordle game, where the user selects a five-letter word, and the program endeavors to guess it within six attempts. Utilizing advanced data structures such as graphs, arrays, hashsets, and arraylists, the program efficiently narrows down possibilities and hones in on the correct word through a series of logical guesses and user feedback.
 
