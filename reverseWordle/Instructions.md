@@ -1,4 +1,9 @@
 # Wordle Solver final project
+
+This program runs a Reverse Wordle game where the user thinks of a five letter word, and the program attempts to guess it in six guesses. The data structures used in this project are mainly graphs, arrays, hashsets, and arraylists. For more specific information about the components of the program and an example of its output, see below. 
+
+## Detailed Program Information and Example Ouput
+The program is centered around the Guava MutableGraph data structure. We used this data structure so that we could efficiently hold information about the relationships among many pieces of data. The below image demonstrates how the structure was used:
 This project filters through the list of all five-letter 
 words in the English language in order to find a 
 combination of five five-letter words which between them
