@@ -1,3 +1,4 @@
+# Smart Shell
 
 This project implements a custom Unix-like shell that allows users to execute basic commands with added support for input/output redirection and command piping. The Smart Shell supports essential shell operations such as command execution, file redirection, and piping between commands, while also featuring custom commands like printing haikus and ASCII art. The shell runs in an infinite loop, accepting and executing commands until the user types quit.
 
