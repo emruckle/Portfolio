@@ -20,3 +20,7 @@ A collection of course and personal projects showcasing my skills and experience
 ## Lempel Ziv Decoder (Spring '23)
 - Technologies Used: C
 - Description: Implemented a decoder for the Lempel-Ziv compression algorithm. The project involves decoding a stream of encoded bits back into the original data, demonstrating proficiency in low-level data processing.
+
+## Smart Shell (Spring '24)
+- Technologies Used: C, Unix System Calls
+- Description: Built a custom Unix-like shell with support for command execution, input/output redirection, and piping. The shell includes fun built-in features like random haikus and an asterisk heart printout. This project showcases my understanding of process management, system calls (fork(), execvp(), wait()), and inter-process communication.
