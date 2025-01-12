@@ -1,0 +1,31 @@
+<table class="styled-table" width=85%>
+    <thead>
+        <tr>
+            <th class="no-link" id="rental-number">
+                <span><%="Rental Number"%> </span>
+            </th>
+            <th class="no-link" id="start_time">
+                <span><%="Start Time"%> </span>
+            </th>
+            <th class="no-link" id="end_time">
+                <span><%="End Time"%></span>
+            </th>
+            <th class="no-link" id="bike_id">
+                <span><%="Bike ID"%></span>
+            </th>
+        </tr>
+    </thead>
+
+    <tbody class="active-row">
+        <% rentals.each_with_index do |rental, i| %>
+        <tr class="link">
+            <%= link_to rental_path(rental.id) do %>
+            <td><%= link_to i + 1, rental_path(rental.id) %></td>
+            <td><%= link_to rental.start_time.strftime("%H:%M") , rental_path(rental.id) %></td>
+            <td><%= link_to rental.end_time.strftime("%H:%M") , rental_path(rental.id) %></td>
+            <td><%= link_to rental.bike_id, rental_path(rental.id) %></td>
+            <% end %>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

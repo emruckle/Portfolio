@@ -1,0 +1,32 @@
+<ul>
+    <li><%= link_to(image_tag('viktor_snail.png', alt: 'Viktor icon'), root_path) %></li>
+    <% if user_signed_in? %>
+    <li><%= button_to 'Log Out', logout_path, method: :delete, class: "header" %></li>
+    <%= link_to user_path(current_user), class: "header" do %>
+    Profile
+    <% end %>
+    <% else %>
+    <%= link_to signup_path, class: "header" do %>
+    Sign Up
+    <% end %>
+    <%= link_to login_path, class: "header" do %>
+    Sign In
+    <% end %>
+    <% end %>
+    <% if active_rental? %>
+    <%# if there is an active rental, link to rental list page %>
+    <%= link_to rentals_path, class: "header" do %>
+    Rent
+    <% end %>
+    <% else %>
+    <%= link_to stations_path, class: "header" do %>
+    Rent
+    <% end %>
+    <% end %>
+    <%= link_to about_path, class: "header" do %>
+    About
+    <% end %>
+    <%= link_to root_path, class: "header" do %>
+    Home
+    <% end %>
+</ul>

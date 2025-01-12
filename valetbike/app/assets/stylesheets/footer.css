@@ -1,0 +1,8 @@
+footer {
+  font-size: 20px;
+  margin-top: 50px;
+  text-align: center;
+  padding: 3px;
+  background-color: var(--polynesian-blue-color);
+  color: white;
+}

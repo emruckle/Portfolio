@@ -1,0 +1,62 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: large;
+}
+
+.field {
+  border-radius: 10px;
+  border-width: 2px;
+  width: 20rem;
+}
+
+.button,
+.profile_button {
+  font-size: medium;
+  border-radius: 10px;
+  border-width: 2px;
+  margin-top: 8px;
+  padding: 7px;
+  width: fit-content;
+  align-self: center;
+  cursor: pointer;
+}
+
+.submit {
+  background-color: var(--sky-blue-color);
+}
+
+.submit:hover {
+  background-color: var(--dark-teal-color);
+}
+
+.return {
+  background-color: var(--medium-gray-color);
+}
+
+.return:hover {
+  background-color: var(--slate-gray-color);
+}
+
+.subscript {
+  font-size: small;
+  color: var(--dark-gray-color);
+  padding: 2px 7px;
+}
+
+#countdown {
+  font-size: 20px;
+}
+
+#dropdown {
+  border-radius: 10px;
+  border-width: 2px;
+  width: 100%;
+  font-size: 20px;
+}
+
+.button-container {
+  margin-bottom: 50px;
+  align-self: center;
+}

@@ -1,0 +1,8 @@
+<div class="button_container">
+    <div class="toggle_button">
+        <%= link_to "Map View", stations_path(view: "map"), class: "toggle_button #{'active' if @view == 'map'}" %>
+    </div>
+    <div class="toggle_button">
+        <%= link_to "List View", stations_path(view: "list"), class: "toggle_button #{'active' if @view == 'list'}" %>
+    </div>
+</div>

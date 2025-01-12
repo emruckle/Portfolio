@@ -1,0 +1,17 @@
+<style>
+    footer {
+        /* positions footer at bottom of page when page content does not fill view*/
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+<%= render(partial: 'layouts/header') %>
+<div class="page-section flexbox vertical stretch">
+    <div class="section-inner flexbox vertical stretch">
+        <div class="section-title">
+            <%= @station.name %> (<%= @station.address %>)
+        </div>
+    </div>
+</div>
+<%= render(partial: "form") %>

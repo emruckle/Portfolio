@@ -1,0 +1,38 @@
+.column,
+.centered_column {
+  color: var(--black-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space_evenly;
+  align-items: flex_start;
+  float: left;
+  width: 50%;
+  padding: 1%; /*10px*/
+}
+
+.title {
+  font-size: xx-large;
+}
+
+h1 {
+  font-size: x-large;
+}
+
+.centered_column {
+  align-items: center; /* centers content within centered_column */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#bike-trail {
+  background-position: 50% 92%;
+  color: black;
+  background-size: cover; /* Ensures the background image covers the entire area */
+  background-repeat: no-repeat;
+  justify-self: center;
+}

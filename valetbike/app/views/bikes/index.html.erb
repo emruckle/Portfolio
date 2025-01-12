@@ -1,0 +1,26 @@
+<%= render(partial: 'layouts/header') %>
+<div class="page-section flexbox vertical stretch">
+    <div class="section-inner flexbox vertical stretch">
+        <div class="section-title-centered">
+            Thank you for returning your bike!
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <center>
+                <h1>
+                    <h1>We hope you enjoyed your ride, and we look forward to seeing you again soon.</h1>
+            </center>
+        </div>
+        <br>
+        <% if active_rental? %>
+        <%# if there is an active rental, link to rental list page %>
+        <%= link_to rentals_path, class: "button" do %>
+        View Active Rentals
+        <% end %>
+        <br>
+        <br>
+        <% end %>
+        <div class="snail_container">
+            <%= image_tag('bike_return.jpg', class: "large_viktor_image", alt: 'Viktor snail') %>
+        </div>
+    </div>
+</div>

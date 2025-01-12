@@ -1,0 +1,34 @@
+<%= render(partial: 'layouts/header') %>
+<div class="page-section flexbox vertical stretch">
+    <div class="section-inner flexbox vertical stretch">
+        <div class="section-title-centered" style="margin: 2rem 0px .5rem 0px">
+            Edit Profile!
+        </div>
+    </div>
+</div>
+<% if flash[:alert] %>
+<div class="alert alert-danger">
+    <%= flash[:alert] %>
+</div>
+<% end %>
+<%= form_with(model: @user, local: true) do |form| %>
+<div>
+    <%= form.text_field :first , placeholder:"Update First Name" , class:"field"%>
+</div>
+<div>
+    <%= form.text_field :last , placeholder:"Update Last Name" , class:"field"%>
+</div>
+<div>
+    <%= form.email_field :email, placeholder:"Update Email", class:"field" %>
+</div>
+<div>
+    <%= form.text_field :username, placeholder:"Update Username", class:"field" %>
+</div>
+<div>
+    <%= form.password_field :password , placeholder:"Update Password" , class:"field"%>
+    <p class="subscript">Minimum of 8 characters</p>
+</div>
+<div class="actions">
+    <%= form.submit 'Update Profile', class:"submit button" %>
+</div>
+<% end %>

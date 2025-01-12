@@ -1,0 +1,120 @@
+/* table for list of stations */
+.styled-table {
+  border-collapse: separate;
+  margin: 2em 0;
+  font-size: 1em;
+  min-width: 10%;
+  border-radius: 10px;
+  overflow: hidden;
+  border-spacing: 0;
+}
+
+/* header row */
+.styled-table th {
+  padding: 0;
+}
+
+/* header row */
+.styled-table thead tr {
+  background-color: var(--polynesian-blue-color);
+  color: var(--white-color);
+  text-align: left;
+}
+
+/* table head (if no link) */
+.styled-table th.no-link {
+  padding: 1em;
+}
+
+/* table head (if link) */
+.styled-table th a {
+  display: block;
+  padding: 1em;
+}
+
+/* table head (if link) hover behavior */
+.styled-table thead tr th a:hover {
+  background-color: var(--sky-blue-color);
+}
+
+/* table field */
+.styled-table td {
+  padding: 0;
+}
+
+/* table row */
+.styled-table tr {
+  padding: 0;
+}
+
+/* table field (if no link) */
+.styled-table td.no-link {
+  padding: 1em;
+}
+
+/* table field (if link) */
+.styled-table td a {
+  display: block;
+  padding: 1em;
+}
+
+/* body row */
+.styled-table tbody tr {
+  border-bottom: 1px solid var(--light-gray-color);
+}
+
+/* body row every-other-row */
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: var(--dark-white-color);
+}
+
+/* last row (puts border on bottom of table) */
+.styled-table tbody tr:last-of-type {
+  border-bottom: 1.5px solid var(--delft-blue-color);
+}
+
+/* if there's an active row, bold it and change the text color */
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: var(--delft-blue-color);
+}
+
+/* head hover behavior (should look like it doesn't do anything) */
+.styled-table thead tr:hover {
+  background-color: var(--polynesian-blue-color);
+}
+
+/* row hover behavior */
+/* .styled-table tr.no-link:hover {
+  background-color: var(--sky-blue-color);
+} */
+
+/* row hover behavior */
+.styled-table tr.link:hover {
+  background-color: var(--sky-blue-color);
+}
+
+/* row hover behavior (overrides alternating row color) */
+.styled-table tbody tr.link:nth-of-type(even):hover {
+  background-color: var(--sky-blue-color);
+}
+
+/* body row every-other-row */
+#history-table tbody tr:nth-of-type(odd) {
+  background-color: var(--white-color);
+  color: black;
+}
+
+#history-table tbody tr:nth-of-type(even) {
+  color: black;
+}
+
+/* rounds upper lefmost corner of first row */
+#history-table tbody tr:nth-of-type(1) td:first-child {
+  border-top-left-radius: 10px;
+}
+
+/* rounds upper rightmost corner of first row */
+#history-table tbody tr:nth-of-type(1) td:last-child {
+  border-top-right-radius: 10px;
+}

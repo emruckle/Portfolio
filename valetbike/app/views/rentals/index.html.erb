@@ -1,0 +1,27 @@
+<%= render(partial: 'layouts/header') %>
+<div class="page-section flexbox vertical stretch">
+    <div class="section-title-centered">
+        Active Rentals
+    </div>
+    <center>
+        <div style="font-size: 18px;">
+            <p>Click on a rental to view your rental countdown or return your bike.</p>
+        </div>
+    </center>
+    <div>
+        <% @rentals = Rental.where(user_id: @user.id, active: true) %>
+        <div class="max-w-7xl mx-auto mt-12">
+            <center>
+                <%= render "rentals", rentals: @rentals %>
+                <% if Rental.where(user_id: session[:user_id], active: true).count < 5 %>
+                <%# button %>
+                <%= link_to stations_path, class: "button" do %>
+                Rent Another Bike
+                <% end %>
+                <% else %>
+                <p>You have reached the maximum number of current bike rentals.</p>
+                <% end %>
+            </center>
+        </div>
+    </div>
+</div>

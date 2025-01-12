@@ -1,0 +1,66 @@
+<%= javascript_include_tag "pop_up", "data-turbolinks-track" => true  %>
+<%# displays flash alert if there is one %>
+<% if flash[:alert] %>
+<div id="flash" onclick="close_flash()">
+    <%= flash[:alert] %>
+</div>
+<% end %>
+<h1><strong>Available Bikes:</strong></h1>
+<%# did not use model: @rental because arguments were not being wrapped in rental key, using name: rental[attribute] syntax instead %>
+<div class="bike-form">
+    <%= form_with(url: rentals_path, local: true) do |form| %>
+    <%# if there are bikes at the station, display and allow user to select one%>
+    <% if count_available_bikes(@station).present? %>
+    <% bikes_available_sorted(@station).each do |bike|%>
+    <label class="radio-button-container">
+        <%= form.radio_button :bike_id, bike.id, name: "rental[bike_id]", class: "custom-radio" %>
+        <%= form.label :bike_id, "Bike ##{bike.id}, #{bike.charge}% Charged", value: bike.id %>
+        <span class="radio"></span>
+    </label>
+    <% end %>
+    <div class="form-container">
+        <%# allow user to select duration of ride %>
+        <h1><strong>Select Ride Duration:</strong></h1>
+        <%= form.select :duration, [
+                ["15 minutes", 15],
+                ["30 minutes", 30],
+                ["45 minutes", 45],
+                ["1 Hour", 60],
+                ["1 Hour 15 Minutes", 75],
+                ["1 Hour 30 Minutes", 90],
+                ["1 Hour 45 Minutes", 105],
+                ["2 Hours", 120]], {}, name: "rental[duration]",
+                id: "dropdown"
+            %>
+        <%# hidden fields %>
+        <%# placeholder, we will generate identifiers later %>
+        <%= form.hidden_field :identifier, value: generate_rental_id(), name: "rental[identifier]"%>
+        <%# init overtime to false %>
+        <%= form.hidden_field :over_time, value: false, name: "rental[over_time]" %>
+        <%# hardcode user id %>
+        <%# hardcode user id %>
+
+        <% if current_user.nil? %>
+        <%= form.hidden_field :user_id, value: 0, name: "rental[user_id]" %>
+        <% else %>
+        <%= form.hidden_field :user_id, value: current_user.id, name: "rental[user_id]" %>
+        <% end %>
+
+        <%# submit form %>
+        <div class="button-container">
+            <%= form.submit "Rent Now!", class: "submit button" %>
+            <%= link_to stations_path(), class: "return button" do %>
+            Return to Stations
+            <% end %>
+        </div>
+        <% else %>
+        <%# if there are no bikes available, display the message %>
+        <div class="empty">No bikes currently available at this station.</div>
+        <div class="button-container" style="display: flex; justify-content: center; align-items: center;">
+            <%= link_to stations_path(), class: "return button" do %>
+            Return to Stations
+            <% end %>
+        </div>
+        <% end %>
+        <% end %>
+    </div>

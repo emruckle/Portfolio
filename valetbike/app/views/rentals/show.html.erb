@@ -1,0 +1,111 @@
+<%# imports pop up js file %>
+<%= javascript_include_tag "pop_up", "data-turbolinks-track" => true  %>
+<style>
+    footer {
+        /* positions footer at bottom of page when page content does not fill view*/
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+<%= render(partial: 'layouts/header') %>
+<div class="page-section flexbox vertical stretch">
+    <div class="section-inner flexbox vertical stretch">
+        <br><br>
+        <div style="text-align: center; font-size: 60px;" class="section-title">
+            Success!
+        </div>
+        <div style="text-align: center;" class="section-title">
+            Enjoy your ride!
+        </div>
+        <h1 style="text-align: center;">Your ride ends in...</h1>
+        <div style="font-size: 2rem; font-weight: bold; color: #1F487E; text-align: center;" id="countdown">
+            &nbsp;
+        </div>
+        <br><br>
+        <div style="align-self: center; text-align: center;"><%= image_tag('viktor_snail.png', alt: 'Bike icon', style: 'width: 100px;') %></div>
+        <br><br>
+        <% if flash[:alert] %>
+        <div id="flash" onclick="close_flash()">
+            <%= flash[:alert] %>
+        </div>
+        <% end %>
+        <%= link_to rentals_path, class: "button" do %>
+        View Active Rentals
+        <% end %>
+        <div class="button" onclick="popup()">
+            Return Your Bike
+        </div>
+        <br><br>
+        <div id="popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); text-align: right">
+            <div style="text-align: left;">
+                <h1>Would you like to return your bike?</h1>
+                <p>We hoped you enjoyed your ride.</p>
+                <%# form to return the bike to a specific station %>
+                <%# @rental.bike_id ensures that the bike_id is being passed as id, not the rental id %>
+                <%= form_with url: return_bike_path(@rental.bike_id), method: :patch, local: true do |form| %>
+                <%= form.hidden_field :current_bike_id, value: @rental.bike_id %>
+                <%= form.hidden_field :current_rental_id, value: @rental.id %>
+                <div>
+                    <%# text field for the user to enter return station id %>
+                    <%= form.select :station_id, @stations.map {|station| [station.name, station.id]}.sort, { prompt: "Select a Station" }, id: "dropdown" %>
+                </div>
+                <div style="display: flex; justify-content: space-around; margin: 0% 30%">
+                    <%# button to close popup (not return the bike) %>
+                    <div class="button return" onclick="close_popup()">
+                        Close
+                    </div>
+                    <%# button to submit the bike return %>
+                    <%= form.submit 'Return', class: "button submit" %>
+                </div>
+                <% end %>
+            </div>
+        </div>
+        <script>
+            // set the time we are counting down to
+            var countdown_time = new Date("<%= @rental.end_time %>").getTime();
+
+            // update count every second
+            var x = setInterval(function() {
+
+                // get current date/time
+                var current_time = new Date().getTime();
+
+                // find time left between now and count down time
+                var time_left = countdown_time - current_time;
+
+                // find hours, minutes and seconds left
+                var hours = Math.floor((time_left % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((time_left % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((time_left % (1000 * 60)) / 1000);
+
+                // convert 1 digit to 00 format strings
+                if (hours < 10) {
+                    hours = "0" + hours.toString()
+                } else {
+                    hours = hours.toString()
+                }
+                if (minutes < 10) {
+                    minutes = "0" + minutes.toString()
+                } else {
+                    minutes = minutes.toString()
+                }
+                if (seconds < 10) {
+                    seconds = "0" + seconds.toString()
+                } else {
+                    seconds = seconds.toString()
+                }
+
+                if (document.getElementById("countdown") != null) {
+                    // show result in countdown div, formatted correctly
+                    document.getElementById("countdown").innerHTML = hours + ":" +
+                        minutes + ":" + seconds;
+
+                    // if the ride is over, say it is over
+                    if (time_left < 0) {
+                        clearInterval(x);
+                        document.getElementById("countdown").innerHTML = "Your rental is over time.";
+                    }
+                }
+            }, 1000);
+        </script>

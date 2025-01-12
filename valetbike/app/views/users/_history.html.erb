@@ -1,0 +1,42 @@
+<table class="styled-table" id="history-table" width=85%>
+    <thead>
+        <tr>
+            <th class="no-link" id="rental-number">
+                <span><%="Rental Number"%> </span>
+            </th>
+            <th class="no-link" id="start_time">
+                <span><%="Start Time"%> </span>
+            </th>
+            <th class="no-link" id="end_time">
+                <span><%="End Time"%></span>
+            </th>
+            <th class="no-link" id="duration">
+                <span><%="Duration"%></span>
+            </th>
+            <th class="no-link" id="bike_id">
+                <span><%="Bike ID"%></span>
+            </th>
+            <th class="no-link" id="over_time">
+                <span><%="Overtime"%></span>
+            </th>
+        </tr>
+    </thead>
+
+    <tbody class="active-row">
+        <% rentals.each_with_index do |rental, i| %>
+        <tr class="no-link">
+            <td class="no-link"><%= i + 1 %></td>
+            <td class="no-link"><%= rental.start_time.strftime("%H:%M") %></td>
+            <td class="no-link"><%= rental.end_time.strftime("%H:%M") %></td>
+            <td class="no-link"><%= rental.duration %> minutes</td>
+            <td class="no-link"><%= rental.bike_id %></td>
+            <td class="no-link"><% if rental.over_time == true %>
+                <span style="color: red; font-weight: bold;">Yes</span>
+                <% else %>
+                No
+                <% end %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

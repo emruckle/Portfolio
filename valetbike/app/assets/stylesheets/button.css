@@ -1,0 +1,62 @@
+.button,
+.toggle_button,
+.profile_button {
+  background-color: var(--sky-blue-color);
+  border: var(--black-color);
+  color: var(--white-color);
+  padding: 1em 2em; /*10px 20px*/
+  width: 25%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button.active,
+.toggle_button.active,
+.profile_button.active {
+  background-color: var(--sky-blue-color); /* Change color for active state */
+}
+
+.toggle_button.active {
+  color: var(--white-color);
+}
+
+.toggle_button {
+  background-color: var(--white-color);
+  color: var(--black-color);
+  padding: 0px;
+  font-size: 20px;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.button_container {
+  display: flex;
+  align-self: center;
+  width: 30%;
+  height: 2.5rem;
+  border: 2.5px solid var(--black-color);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.button:hover {
+  background-color: var(--button-hover-color);
+}
+
+.profile_button:hover {
+  background-color: var(--medium-gray-color);
+}
+
+#rent-a-bike {
+  width: 10%;
+  font-size: 55%;
+  box-shadow: 0 4px 8px 0 var(--drop-shadow-opaque), 0 6px 20px 0 var(--drop-shadow-opaque);
+}
+
+.profile_button {
+  background-color: var(--white-color);
+  color: var(--polynesian-blue-color);
+}

@@ -1,0 +1,39 @@
+<%= render(partial: 'layouts/header') %>
+<div class="page-section flexbox vertical stretch">
+    <div class="section-title-centered">
+        Rent a Bike!
+    </div>
+    <%= render(partial: 'stations/toggle') %>
+    <center>
+        <br>
+        <p>To rent a bike, select the station you would like to rent from. This will bring you to a bike rental form. You'll be able to return your bike to any station at the end of your ride.</p>
+    </center>
+    <div>
+        <% if @view == 'map' %>
+        <br>
+        <div>
+            <div class="map-container">
+                <div style="width:70%;">
+                    <%= render(partial: 'layouts/map') %>
+                </div>
+                <div style="width:20%;">
+                    <%= render "dropdown", stations: @stations %>
+                </div>
+            </div>
+        </div>
+        <% else %>
+        <% if @stations.present? %>
+        <div class="max-w-7xl mx-auto mt-12">
+            <center>
+                <%= render "stations", stations: @stations %>
+            </center>
+        </div>
+        <% else %>
+        <div class="empty">
+            No stations found.
+        </div>
+        <% end %>
+        <% end %>
+    </div>
+</div>
+</div>

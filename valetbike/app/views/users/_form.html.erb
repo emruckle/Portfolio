@@ -1,0 +1,31 @@
+<%= form_with model: @user, local: true do |form| %>
+<div class="form-container">
+    <%# <%= @user.errors.full_messages.inspect %>
+    <div>
+        <%# <%= form.label :identifier %>
+        <%= form.hidden_field :identifier, value: generate_user_id() , class:"field" %>
+    </div>
+    <div>
+        <%# <%= form.label :email %>
+        <%= form.email_field :email, placeholder:"Enter Email", class:"field" %>
+    </div>
+    <div>
+        <%# <%= form.label :first %>
+        <%= form.text_field :first,  placeholder:"First Name" , class:"field" %>
+    </div>
+    <div>
+        <%# <%= form.label :last %>
+        <%= form.text_field :last , placeholder:"Last Name" , class:"field"%>
+    </div>
+    <div>
+        <%# <%= form.label :username %>
+        <%= form.text_field :username , placeholder:"Create a Username" , class:"field"%>
+    </div>
+    <div>
+        <%# <%= form.label :password %>
+        <%= form.password_field :password , placeholder:"Create a Password" , class:"field"%>
+        <p class="subscript">Minimum of 8 characters</p>
+    </div>
+    <%= form.submit "Start Riding!", class:"submit button" %>
+    <% end %>
+</div>

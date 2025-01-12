@@ -1,0 +1,24 @@
+<%= javascript_include_tag "pop_up", "data-turbolinks-track" => true  %>
+<%= render(partial: 'layouts/header') %>
+<div class="page-section flexbox vertical stretch">
+    <div class="section-inner flexbox vertical stretch">
+        <% if flash[:alert] %>
+        <div id="flash" onclick="close_flash()">
+            <%= flash[:alert] %>
+        </div>
+        <% end %>
+        <div class="section-title-centered" style="margin: 2rem 0px .5rem 0px">
+            Sign In!
+        </div>
+    </div>
+</div>
+<%= render(partial: "form") %>
+</div>
+<div class="section-title-centered" style="display: flex; margin: 2rem 0px .5rem 0px; align-items: center;">
+    <h1> Don't have an account yet? </h1>
+</div>
+<div class="section-title-centered" style="display: flex; align-items: center;">
+    <%= link_to signup_path, class: "button" do %>
+    Make one here!
+    <% end %>
+</div>

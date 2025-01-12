@@ -1,0 +1,101 @@
+<%= render(partial: 'layouts/header') %>
+<div class="page-section flexbox vertical stretch">
+    <div class="section-inner flexbox vertical stretch">
+        <div class="section-title" id="bike-trail" style="background-image: url(<%= asset_path 'vector_on_a_ride.jpg' %>);width:100vw;align-self:center;">
+            <br>
+            <center>
+                <div style="text-shadow: 1px 0px 16px rgba(255,255,255,1);">
+                    <% if user_signed_in? %>
+                    Welcome to VectorBike, <%= current_user.first %>!
+                    <% else %>
+                    Welcome to VectorBike, Riders!
+                    <% end %>
+                    <h1>Snail charm. Electric power.</h1>
+                </div>
+                <div>
+                    <% if active_rental? %>
+                    <%= link_to rentals_path, class: "button", id:"rent-a-bike" do %>
+                    Rent a Bike!
+                    <% end %>
+                    <% else %>
+                    <%= link_to stations_path, class: "button", id:"rent-a-bike" do %>
+                    Rent a Bike!
+                    <% end %>
+                    <% end %>
+            </center>
+            <br>
+        </div>
+    </div>
+    <div="container">
+        <center>
+            <h1>About VectorBike</h1>
+        </center>
+        <br>
+        <div style="font-size: 18px;">
+            <p style="margin-left: 10%; margin-right: 10%;text-align:center;">VectorBike is a bike share program located in Nipmuc Notch. Riders can rent electric bikes and return them to any bike station. Our service is great for commuters or casual riders.</p>
+        </div>
+        <div class="row">
+            <div class="column">
+                <center>
+                    <h1>Bike Share Locations</h1>
+                    <%= render(partial: 'layouts/map') %>
+                </center>
+            </div>
+            <div class="column">
+                <center>
+                    <h1>Pricing</h1>
+                    <table class="styled-table" style="width: 75%; margin-top: 0;">
+                        <thead>
+                            <tr>
+                                <th class="no-link">Time</th>
+                                <th class="no-link">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="no-link">
+                                <td class="no-link">15 Minutes</td>
+                                <td class="no-link">$2.00</td>
+                            </tr>
+                            <tr class="no-link">
+                                <td class="no-link">30 Minutes</td>
+                                <td class="no-link">$3.00</td>
+                            </tr>
+                            <tr class="no-link">
+                                <td class="no-link">45 Minutes</td>
+                                <td class="no-link">$4.00</td>
+                            </tr>
+                            <tr class="no-link">
+                                <td class="no-link">1 Hour</td>
+                                <td class="no-link">$5.00</td>
+                            </tr>
+                            <tr class="no-link">
+                                <td class="no-link">1 Hour and 15 Minutes</td>
+                                <td class="no-link">$6.00</td>
+                            </tr>
+                            <tr class="no-link">
+                                <td class="no-link">1 Hour and 30 Minutes</td>
+                                <td class="no-link">$7.00</td>
+                            </tr>
+                            <tr class="no-link">
+                                <td class="no-link">1 Hour and 45 Minutes</td>
+                                <td class="no-link">$8.00</td>
+                            </tr>
+                            <tr class="no-link">
+                                <td class="no-link">2 Hours</td>
+                                <td class="no-link">$9.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </center>
+            </div>
+        </div>
+        <br>
+        <center>
+            <h1>How to Use VectorBike</h1>
+            <br>
+            <%= image_tag('viktor_steps.jpg', alt: 'Vector Bike Steps', style: 'margin-left: 20px; margin-right: 20px; width: 80%;') %>
+        </center>
+        <br>
+</div>
+</div>
+</div>

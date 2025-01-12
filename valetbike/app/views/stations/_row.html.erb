@@ -1,0 +1,7 @@
+<div class="record-row <%= cycle "odd", "even", name: "row-cycler" %> flexbox vertical stretch">
+    <div class="flexbox">
+        <%= link_to station_path(station.id) do %>
+        <%= station.identifier %>: <%= station.name %> (<%= station.address %>)
+        <% end %>
+    </div>
+</div>

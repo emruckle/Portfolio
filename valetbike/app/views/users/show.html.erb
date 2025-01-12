@@ -1,0 +1,125 @@
+<%# imports pop up js file %>
+<%= javascript_include_tag "pop_up", "data-turbolinks-track" => true  %>
+<%= render(partial: 'layouts/header') %>
+<div class="page-section flexbox vertical stretch">
+    <div class="section-inner flexbox vertical stretch">
+        <% if flash[:notice] %>
+        <div id="flash" onclick="close_flash()" style="background-color:green;">
+            <%= flash[:notice] %>
+        </div>
+        <% end %>
+        <br>
+        <br>
+        <div="container">
+            <div class="row">
+                <div class="column">
+                    <div class="box1">
+                        <div class="container">
+                            <div class="section-title-centered">
+                                Hello, <%= @user.first %>!
+                                <% top_users = User.order(hours: :desc).limit(10) %>
+                                <% if top_users.include?(@user) %>
+                                <div class="tooltip">
+                                    <span style="display: inline-block; vertical-align: top; margin-left: 10px;">
+                                        <%= image_tag('top_ten_badge.png', alt: 'Top Ten Badge', style: 'width: 60px;') %>
+                                        <span class="tooltiptext">You are in our top ten riders!</span>
+                                    </span>
+                                </div>
+                                <% end %>
+                            </div>
+                        </div>
+                        <%= link_to edit_user_path(current_user), class: "profile_button" do %>
+                        Edit Profile
+                        <% end %>
+                        <div class="profile_button" onclick="popup()">
+                            Delete Profile
+                        </div>
+                        <br>
+                        <br>
+                        <h1>Account Information</h1>
+                        <div style="font-size: 18px;">
+                        <br>
+                        <div class="flexbox">
+                            First Name: <%= @user.first %>
+                        </div>
+                        <br>
+                        <div class="flexbox">
+                            Last Name: <%= @user.last %>
+                        </div>
+                        <br>
+                        <div class="flexbox">
+                            Userame: <%= @user.username %>
+                        </div>
+                        <br>
+                        <div class="flexbox">
+                            Email: <%= @user.email %>
+                        </div>
+                        <br>
+                        <div class="flexbox">
+                            Balance: $<%= sprintf("%.2f", @user.balance || 0.0) %>
+                        </div>
+                        <br>
+                        </div>
+                        <script src="https://js.stripe.com/v3/"></script>
+                        <button class="profile_button" id="checkout-button">Add Funds</button>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="speech-box">
+                        <%# display number of hours a user has biked in whole hours %>
+                        Congrats, you have biked <%= (@user.hours || 0).truncate() %> hours on <%= Rental.where(user_id: @user.id).count %> rides!
+                    </div>
+                    <div="container">
+                        <div style="align-self: center; text-align: center;"><%= image_tag('flipped_viktor.png', alt: 'Flipped_Snail', style: 'width: 100px;') %></div>
+                    <div class="box" id="table_box">
+                        <h1 style="position: sticky; top: 0; background-color:var(--polynesian-blue-color); margin-left: 10px; padding-top: 10px; padding-bottom: 10px;">Your Rental History</h1>
+                        <% @rentals = Rental.where(user_id: current_user.id, active: false) %>
+                        <div class="max-w-7xl mx-auto mt-12">
+                            <center>
+                                <%= render "history", rentals: @rentals %>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+</div>
+</div>
+<div id="popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); text-align: right">
+    <div style="text-align: left;">
+        <h1>Would you like to delete your profile?</h1>
+        <p>We hoped you enjoyed your time with VectorBike.</p>
+        <div style="display: flex; justify-content: space-around; margin: 0% 25%">
+            <%# button to close popup%>
+            <div class="button return" onclick="close_popup()">
+                Close
+            </div>
+            <%# button to go through with profile deletion %>
+            <%= button_to('Delete Profile', user_path, method: :delete, class: "button") %>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+    document.getElementById('checkout-button').addEventListener('click', function() {
+        fetch('/create-checkout-session', {
+                method: 'POST',
+            })
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(sessionId) {
+                const stripe = Stripe('pk_test_51QNfAeBdC2IsMXiiJsPSWF48k3gGuIBYmYKqgkutlHrlfbedYz8oLDUPuApV8J4iVdFL0R0kP2zpgw8vQvxgXgjd00eo57lWba'); // Replace with your Stripe publishable key
+                stripe.redirectToCheckout({
+                    sessionId: sessionId.id
+                });
+            })
+            .catch(function(error) {
+                console.error("Error:", error);
+            });
+    });
+</script>

@@ -1,0 +1,27 @@
+<table class="styled-table" width=85%>
+    <thead>
+        <tr>
+            <th id="station-name">
+                <span><%= link_to "Station Name", :sort => "name", view: @view%> </span>
+            </th>
+            <th id="address">
+                <span><%= link_to "Address", :sort => "address", view: @view%> </span>
+            </th>
+            <th id="available-bikes">
+                <span><%= link_to "Available Bikes", :sort => "available_bikes", view: @view%> </span>
+            </th>
+        </tr>
+    </thead>
+
+    <tbody class="active-row">
+        <% stations.each do |station| %>
+        <tr class="link">
+            <%= link_to station_path(station.id) do %>
+            <td><%= link_to station.name, station_path(station.id) %></td>
+            <td><%= link_to station.address, station_path(station.id) %></td>
+            <td><%= link_to count_available_bikes(station), station_path(station.id) %></td>
+            <% end %>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

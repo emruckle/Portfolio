@@ -1,0 +1,22 @@
+.snail_pics {
+  width: 25%;
+  height: 25%;
+  border-radius: 50%;
+  background: url(URL) no-repeat;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+  border: 5px solid var(--sky-blue-color);
+  margin: 2.5%;
+}
+
+.snail_container {
+  display: flex;
+  justify-content: center;
+}
+
+.rating_image {
+  width: 25%;
+}
+
+.large_viktor_image {
+  width: 60%;
+}
