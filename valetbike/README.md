@@ -78,7 +78,7 @@ On each subsequent deployment, only `rails s` is required to launch the page. If
 - Users with fewer than five rentals can rent additional bikes; users at the limit see a message indicating they have reached the maximum number of rentals.
 - Once all rentals are returned, users are routed to the stations list when they click `Rent` or `Rent a Bike!`.
 
-### Recommended walkthrough
+## Recommended Walkthrough
 - Navigate to the sign up page, and sign up for an account.
 - Add funds to your account via the `Add Funds` button. We recommended putting at least $10.00 into your account. Use the card number `4242 4242 4242 4242` in the Stripe test API, provide a reasonable expiration date for the card, and fill all other fields with random data.
 - Navigate to the rent page.
@@ -101,3 +101,9 @@ On each subsequent deployment, only `rails s` is required to launch the page. If
 - Observe that you now have two past rides.
 - Click the `Delete Profile` button
 - Confirm the deletion of your profile in the pop up.
+
+## Demo Video
+
+
+https://github.com/user-attachments/assets/577cb7b7-56da-40c9-90d1-021991d8084f
+
