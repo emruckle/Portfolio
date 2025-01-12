@@ -3,7 +3,7 @@ A collection of course and personal projects showcasing my skills and experience
 
 ## ValetBike (Fall '24)
 - Technologies Used: Ruby, Rails, MySQL, JavaScript, HTML, CSS, Git, Stripe API, Agile methodology
-- Description: Collaboratively developed VectorBike (branded version of ValetBike), a bike rental management platform with robust account and rental management features. The platform allows users to create accounts, manage profiles, rent bikes, return bikes and track ride history. This project demonstrates my skills in web development, database integration, and API utilization, as well as my ability to contribute to a team-based software engineering project.
+- Description: Collaboratively developed VectorBike (branded version of ValetBike), a bike rental management platform. The platform allows users to create accounts, manage profiles, rent bikes, return bikes and track ride history. This project demonstrates my skills in web development, database integration and API utilization.
 
 ## fasterr (Fall '24)
 - Technologies Used: C++, R, Rcpp
