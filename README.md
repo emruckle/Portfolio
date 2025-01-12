@@ -14,7 +14,7 @@ A collection of course and personal projects showcasing my skills and experience
 - Description: Designed a web-based Tic Tac Toe game with an extended grid for a more challenging experience. This project showcases my skills in web development and interactive user interface design.
 
 ## MIPS Paint (Summer '24)
-- Technologies Used: MIPS Assembly
+- Technologies Used: MIPS Assembly, Nintendo 64, Everdrive-64 X7
 - Description: Created an MS Paint-inspired drawing application for the Nintendo 64. This project highlights my skills in MIPS Assembly Language, graphics programming, and understanding of the N64 architecture.
 
 ## Smart Shell (Spring '24)
