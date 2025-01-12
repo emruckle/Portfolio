@@ -2,7 +2,7 @@
 A collection of course and personal projects showcasing my skills and experience in various programming languages and technologies. See each individual project folder for more in depth information.
 
 ## fasterr (Fall '24)
-- Technologies Used: Java
+- Technologies Used: C++, R, Rcpp
 - Description: Developed the fasterr R package to optimize the performance of three widely used R functions by rewriting them in C++ using Rcpp. This package accelerates data processing workflows while maintaining consistent functionality.
 
 ## Mega Tic Tac Toe (Summer '24)
@@ -26,5 +26,5 @@ A collection of course and personal projects showcasing my skills and experience
 - Description: Implemented a decoder for the Lempel-Ziv compression algorithm. The project involves decoding a stream of encoded bits back into the original data, demonstrating proficiency in low-level data processing.
 
 ## Reverse Wordle (Fall '23)
-- Technologies Used: C++, R, Rcpp
+- Technologies Used: Java
 - Description: Developed a word-guessing game where the roles are reversed: the computer tries to guess the player's chosen word. This project demonstrates my abilities in Java programming and algorithm development.
