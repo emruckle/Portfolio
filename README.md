@@ -1,6 +1,10 @@
 # Portfolio
 A collection of course and personal projects showcasing my skills and experience in various programming languages and technologies. See each individual project folder for more in depth information.
 
+## valetbike (Fall '24)
+- Technologies Used: Ruby, Rails, MySQL, JavaScript, HTML, CSS, Git, Stripe API, Agile methodology
+- Description: Collaboratively developed VectorBike (branded version of valetbike), a bike rental management platform with robust account and rental management features. The platform allows users to create accounts, manage profiles, rent bikes, return bikes and track ride history. This project demonstrates my skills in web development, database integration, and API utilization, as well as my ability to contribute to a team-based software engineering project.
+
 ## fasterr (Fall '24)
 - Technologies Used: C++, R, Rcpp
 - Description: Developed the fasterr R package to optimize the performance of three widely used R functions by rewriting them in C++ using Rcpp. This package accelerates data processing workflows while maintaining consistent functionality.
